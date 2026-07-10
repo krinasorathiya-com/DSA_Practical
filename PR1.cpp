@@ -1,6 +1,10 @@
 #include<iostream>
 using namespace std;
-class Bakery
+
+int main()
 {
-    
+    int n,h,k;
+    cout<<"Enter the number of elements in the array: ";
+
+
 }
