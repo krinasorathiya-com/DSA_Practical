@@ -13,7 +13,7 @@ void FindDuplicate(int log[],int n)
     {
         if(entry.second>1)
         {
-            cout<<entry.first<<" ";
+            cout<<entry.first<<endl;
         }
     }
 }
