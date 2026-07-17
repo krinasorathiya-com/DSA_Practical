@@ -18,7 +18,7 @@ void FindDuplicate(int log[],int n)
     }
 }
 int main(){
-    int log[]={101,134,154,101,134,200,300,400,500};
+    int log[]={101,134,154,101,134,200,300,400,500,134};
     int n=7;
     FindDuplicate(log,n);
 }
