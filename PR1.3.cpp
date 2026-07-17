@@ -1,6 +1,6 @@
 #include <iostream>
-#include <string>
 #include <sstream>
+#include <string>
 using namespace std;
 
 int main()
@@ -10,7 +10,8 @@ int main()
     getline(cin, sentence);
 
     stringstream ss(sentence);
-    string word, longestWord;
+    string word;
+    string longestWord;
 
     while (ss >> word)
     {
@@ -20,8 +21,15 @@ int main()
         }
     }
 
-    cout << "Longest word: " << longestWord << endl;
-    cout << "Length: " << longestWord.length() << endl;
+    if (longestWord.empty())
+    {
+        cout << "No word entered." << endl;
+    }
+    else
+    {
+        cout << "Longest word: " << longestWord << endl;
+        cout << "Length: " << longestWord.length() << endl;
+    }
 
     return 0;
 }
