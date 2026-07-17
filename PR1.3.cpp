@@ -1,5 +1,4 @@
 #include <iostream>
-#include <sstream>
 #include <string>
 using namespace std;
 
@@ -9,27 +8,27 @@ int main()
     cout << "Enter a string: ";
     getline(cin, sentence);
 
-    stringstream ss(sentence);
-    string word;
-    string longestWord;
+    string longestWord = "";
+    string currentWord = "";
+    int maxLength = 0;
+    int currentLength = 0;
 
-    while (ss >> word)
+    for(char c : sentence)
     {
-        if (word.length() > longestWord.length())
+        if (c == ' ')
         {
-            longestWord = word;
+            if (currentLength > maxLength)
+            {
+                longestWord = currentWord;
+                maxLength = currentLength;
+            }
+            currentWord = "";
+            currentLength = 0;
+        }
+        else
+        {
+            currentWord += c;
+            currentLength++;
         }
     }
-
-    if (longestWord.empty())
-    {
-        cout << "No word entered." << endl;
-    }
-    else
-    {
-        cout << "Longest word: " << longestWord << endl;
-        cout << "Length: " << longestWord.length() << endl;
-    }
-
-    return 0;
 }
