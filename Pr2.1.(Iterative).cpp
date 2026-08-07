@@ -13,7 +13,7 @@ int iterativeLinearSearch(string plates[], int size, string target)
 
 int main()
 {
-    string plates[] = {"KA01AB1234", "MH12XY5678", "DL05CD9999", "TN10EF1111", "MH12XY5678"};
+    string plates[] = { "JK10QS2108", "KN11RT0408", "MO13EF1234", "HK03HK6909"};
     int size = sizeof(plates) / sizeof(plates[0]);
 
     string target;
