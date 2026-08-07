@@ -1,0 +1,24 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int binarySearchRecursive(int arr[], int low, int high, int target) {
+if (low > high) return -1; 
+int mid = low + (high - low) / 2;
+if (arr[mid] == target) return mid; 
+else if (arr[mid] < target)
+return binarySearchRecursive(arr, mid + 1, high, target);
+else
+return binarySearchRecursive(arr, low, mid - 1, target);
+}
+
+int main() {
+
+int arr[] = {312, 823, 912, 619, 429, 245, 867, 391};
+int n = 8, target = 912;
+
+int result = binarySearchRecursive(arr, 0, n - 1, target);
+if (result != -1) cout << "Found at index " << result; 
+else cout << "Not Found";
+return 0;
+
+}
