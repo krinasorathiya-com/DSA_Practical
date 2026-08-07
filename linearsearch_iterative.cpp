@@ -12,8 +12,8 @@ return -1;
 }
 
 int main() {
-int arr[] = {12, 45, 3, 67, 29, 8, 91};
-int n = 7, target = 67;
+int arr[] = {45,90,56,34,2,1234,67,78,67,367};
+int n = 10, target = 78;
 
 int result = linearSearchIterative(arr, n, target);
 if (result != -1) cout << "Found at index " << result; 
