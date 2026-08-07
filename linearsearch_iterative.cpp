@@ -19,5 +19,4 @@ int result = linearSearchIterative(arr, n, target);
 if (result != -1) cout << "Found at index " << result; 
 else cout << "Not Found";
 return 0;
-
 }
