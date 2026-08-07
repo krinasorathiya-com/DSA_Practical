@@ -11,16 +11,13 @@ int iterativeBinarySearch(int arr[], int size, int target)
         int mid = (low + high) / 2;
 
         if (arr[mid] == target)
-        {
-            return mid;
+        { return mid;
         }
         else if (arr[mid] < target)
-        {
-            high = mid + 1;
+        { high = mid + 1;
         }
         else
-        {
-            low = mid - 1;
+        { low = mid - 1;
         }
     }
     return -1;
