@@ -10,16 +10,13 @@ int recursiveBinarySearch(int arr[], int low, int high, int target)
     int mid = (low+ high) / 2;
 
     if (arr[mid] == target)
-    {
-        return mid;
+    {return mid;
     }
     else if (arr[mid] < target)
-    {
-        return recursiveBinarySearch(arr, mid + 1, high, target);
+    {return recursiveBinarySearch(arr, mid + 1, high, target);
     }
     else
-    {
-        return recursiveBinarySearch(arr, low, mid - 1, target);
+    { return recursiveBinarySearch(arr, low, mid - 1, target);
     }
 }
 
