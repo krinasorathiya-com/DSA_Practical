@@ -23,8 +23,8 @@ void sortColors(int arr[], int n) {
 }
 
 int main() {
-    int colors[] = {1,2,0,0,2,1,1,0,2,1,0,0,0,2,2,2,1,1,1};
-    int n = 9;
+    int colors[] = {1,2,0,0,2,1,1,0,2,1,0,0,0,2,2,2,1,1,1,0};
+    int n = 20;
 
     sortColors(colors, n);
 
