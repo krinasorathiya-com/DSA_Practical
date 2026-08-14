@@ -69,7 +69,8 @@ int main() {
     int bubble[n], selection[n], insertion[n];
 
     
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++)
+    {
         bubble[i] = marks[i];
         selection[i] = marks[i];
         insertion[i] = marks[i];
