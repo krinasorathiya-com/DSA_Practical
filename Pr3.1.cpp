@@ -1,6 +1,5 @@
 #include <iostream>
 using namespace std;
-
 //1.Bubble Sort
 void bubbleSort(int arr[], int n)
 {
@@ -15,7 +14,6 @@ void bubbleSort(int arr[], int n)
         }
     }
 }
-
 //2.Selection Sort
 void selectionSort(int arr[], int n)
 {
