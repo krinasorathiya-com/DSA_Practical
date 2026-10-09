@@ -15,15 +15,20 @@ void enqueue()
     int id;
     cout << "Enter patient ID: ";
     cin >> id;
+
     Node* newNode = new Node;
     newNode->patient = id;
     newNode->next = NULL;
 
     if (front == NULL)
-    {front = rear = newNode;}
+    {
+        front = rear = newNode;
+    }
     else
-    {rear->next = newNode;
-        rear = newNode;}
+    {
+        rear->next = newNode;
+        rear = newNode;
+    }
 
     cout << "Patient arrived successfully" << endl;
     cout << "Current Front Patient: " << front->patient << endl;
@@ -32,13 +37,21 @@ void enqueue()
 void dequeue()
 {
     if (front == NULL)
-    {cout << "Error: No patients waiting" << endl;return;}
+    {
+        cout << "Error: No patients waiting" << endl;
+        return;
+    }
 
     Node* temp = front;
+
     cout << "Attended Patient: " << front->patient << endl;
+
     front = front->next;
+
     if (front == NULL)
-    {rear = NULL;}
+    {
+        rear = NULL;
+    }
 
     delete temp;
 
@@ -61,8 +74,11 @@ void display()
     cout << "Waiting Patients: ";
 
     while (temp != NULL)
-    {cout << temp->patient << " ";
-        temp = temp->next;}
+    {
+        cout << temp->patient << " ";
+        temp = temp->next;
+    }
+
     cout << "\nCurrent Front Patient: " << front->patient << endl;
 }
 
@@ -82,23 +98,36 @@ int main()
         cin >> choice;
 
         if (choice == 1)
-        {enqueue();}
+        {
+            enqueue();
+        }
         else if (choice == 2)
-        {dequeue();}
+        {
+            dequeue();
+        }
         else if (choice == 3)
-        {display();}
+        {
+            display();
+        }
         else if (choice == 4)
-        {cout << "Program ended" << endl;}
+        {
+            cout << "Program ended" << endl;
+        }
         else
-        {cout << "Invalid choice" << endl;}
+        {
+            cout << "Invalid choice" << endl;
+        }
 
     } while (choice != 4);
 
     while (front != NULL)
-    {Node* temp = front;
+    {
+        Node* temp = front;
         front = front->next;
-        delete temp;}
+        delete temp;
+    }
 
     rear = NULL;
+
     return 0;
 }
