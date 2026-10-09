@@ -13,37 +13,27 @@ void enqueue()
         printf("Queue Overflow\n");
         return;
     }
-
     printf("Enter token number: ");
     scanf("%d", &value);
 
     if (front == -1)
         front = 0;
-
     rear = (rear + 1) % MAX;
     queue[rear] = value;
-
     printf("Token inserted successfully\n");
 }
 
 void dequeue()
 {
     if (front == -1)
-    {
-        printf("Queue Underflow\n");
-        return;
-    }
+    {printf("Queue Underflow\n");return;}
 
     printf("Deleted token: %d\n", queue[front]);
 
     if (front == rear)
-    {
-        front = rear = -1;
-    }
+    {front = rear = -1;}
     else
-    {
-        front = (front + 1) % MAX;
-    }
+    {front = (front + 1) % MAX;}
 }
 
 void display()
@@ -55,20 +45,16 @@ void display()
         printf("Queue is Empty\n");
         return;
     }
-
     printf("Queue elements: ");
     i = front;
 
     while (1)
     {
         printf("%d ", queue[i]);
-
         if (i == rear)
             break;
-
         i = (i + 1) % MAX;
     }
-
     printf("\nFront token: %d\n", queue[front]);
 }
 
@@ -88,27 +74,15 @@ int main()
         scanf("%d", &choice);
 
         if (choice == 1)
-        {
-            enqueue();
-        }
+        {enqueue();}
         else if (choice == 2)
-        {
-            dequeue();
-        }
+        {dequeue();}
         else if (choice == 3)
-        {
-            display();
-        }
+        {display();}
         else if (choice == 4)
-        {
-            printf("Program ended\n");
-        }
+        {printf("Program ended\n");}
         else
-        {
-            printf("Invalid choice\n");
-        }
-
-    } while (choice != 4);
-
-    return 0;
+        {printf("Invalid choice\n");}
+    }
+while (choice != 4);return 0;
 }
