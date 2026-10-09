@@ -1,4 +1,6 @@
-#include <stdio.h>
+#include <iostream>
+using namespace std;
+
 #define MAX 5
 
 int queue[MAX];
@@ -10,52 +12,65 @@ void enqueue()
 
     if ((rear + 1) % MAX == front)
     {
-        printf("Queue Overflow\n");
+        cout << "Queue Overflow" << endl;
         return;
     }
-    printf("Enter token number: ");
-    scanf("%d", &value);
+
+    cout << "Enter token number: ";
+    cin >> value;
 
     if (front == -1)
         front = 0;
+
     rear = (rear + 1) % MAX;
     queue[rear] = value;
-    printf("Token inserted successfully\n");
+
+    cout << "Token inserted successfully" << endl;
 }
 
 void dequeue()
 {
     if (front == -1)
-    {printf("Queue Underflow\n");return;}
+    {
+        cout << "Queue Underflow" << endl;
+        return;
+    }
 
-    printf("Deleted token: %d\n", queue[front]);
+    cout << "Deleted token: " << queue[front] << endl;
 
     if (front == rear)
-    {front = rear = -1;}
+    {
+        front = rear = -1;
+    }
     else
-    {front = (front + 1) % MAX;}
+    {
+        front = (front + 1) % MAX;
+    }
 }
 
 void display()
 {
-    int i;
-
     if (front == -1)
     {
-        printf("Queue is Empty\n");
+        cout << "Queue is Empty" << endl;
         return;
     }
-    printf("Queue elements: ");
-    i = front;
 
-    while (1)
+    cout << "Queue elements: ";
+
+    int i = front;
+
+    while (true)
     {
-        printf("%d ", queue[i]);
+        cout << queue[i] << " ";
+
         if (i == rear)
             break;
+
         i = (i + 1) % MAX;
     }
-    printf("\nFront token: %d\n", queue[front]);
+
+    cout << "\nFront token: " << queue[front] << endl;
 }
 
 int main()
@@ -64,14 +79,14 @@ int main()
 
     do
     {
-        printf("\n--- Token Counter ---\n");
-        printf("1. Enqueue\n");
-        printf("2. Dequeue\n");
-        printf("3. Display\n");
-        printf("4. Exit\n");
+        cout << "\n--- Token Counter ---" << endl;
+        cout << "1. Enqueue" << endl;
+        cout << "2. Dequeue" << endl;
+        cout << "3. Display" << endl;
+        cout << "4. Exit" << endl;
 
-        printf("Enter your choice: ");
-        scanf("%d", &choice);
+        cout << "Enter your choice: ";
+        cin >> choice;
 
         if (choice == 1)
         {enqueue();}
@@ -80,9 +95,11 @@ int main()
         else if (choice == 3)
         {display();}
         else if (choice == 4)
-        {printf("Program ended\n");}
+        {cout << "Program ended" << endl;}
         else
-        {printf("Invalid choice\n");}
-    }
-while (choice != 4);return 0;
+        {cout << "Invalid choice" << endl;}
+
+    } while (choice != 4);
+
+    return 0;
 }
